@@ -32,3 +32,13 @@ print(f'{name}, wszystkiego najlepszego z okazji {2026 - age} urodzin!')
 print(message)
 print(f'Życzy {sender}.')
 print()
+
+### NIŻEJ wersja zadania, w której dzięki modułowi datatime pobrałem bieżący rok systemowy.
+
+from datetime import date
+act_year = date.today().year
+
+print(f'{name}, wszystkiego najlepszego z okazji {act_year - age} urodzin!')
+print(message)
+print(f'Życzy {sender}.')
+print()
