@@ -177,7 +177,7 @@
 # – Dodaje ograniczenie dotyczące rozmiaru ELEMENTÓW
 
 # waga_wszystkich_elementow = 0
-# ilosc_paczek = 1
+# ilosc_paczek = 0
 # maksymalna_waga_paczki = 20
 # aktualna_waga_paczki = 0
 # najlzejsza_paczka = 0
@@ -195,6 +195,7 @@
 #         aktualna_waga_paczki += waga_elementu
 #     else:
 #         if aktualna_waga_paczki < waga_najlzejszej_paczki:
+#             ilosc_paczek = 1 # Jeśli jest choć jeden ELEMENT zmieścił się w PACZCE
 #             najlzejsza_paczka = ilosc_paczek
 #             waga_najlzejszej_paczki = aktualna_waga_paczki
 #         aktualna_waga_paczki = waga_elementu
@@ -215,7 +216,7 @@
 # – Sprawdzenie, czy cokolwiek zostało dodane do wysyłki
 
 # waga_wszystkich_elementow = 0
-# ilosc_paczek = 1
+# ilosc_paczek = 0
 # maksymalna_waga_paczki = 20
 # aktualna_waga_paczki = 0
 # najlzejsza_paczka = 0
@@ -224,7 +225,6 @@
 # ilosc_elementow = int(input('Ile elementów chcesz wysłać? '))
 #
 # if ilosc_elementow > 0:
-#     ilosc_paczek = 1 # Jeśli jest choć jeden ELEMENT zmieścił się w PACZCE
 #     for numer_elementu in range(ilosc_elementow):
 #         waga_elementu = float(input('Podaj wagę elementu: '))
 #         if waga_elementu > 10 or waga_elementu < 1:
@@ -235,6 +235,7 @@
 #             aktualna_waga_paczki += waga_elementu
 #         else:
 #             if aktualna_waga_paczki < waga_najlzejszej_paczki:
+#                 ilosc_paczek = 1 # Jeśli jest choć jeden ELEMENT zmieścił się w PACZCE
 #                 najlzejsza_paczka = ilosc_paczek
 #                 waga_najlzejszej_paczki = aktualna_waga_paczki
 #             aktualna_waga_paczki = waga_elementu
@@ -259,7 +260,7 @@
 # – Zamknięcie ostatniej PACZKI
 
 waga_wszystkich_elementow = 0
-ilosc_paczek = 1 # Co zrobić, kiedy nie wysłałem żadnego ELEMENTU, żeby nie wyświetliło 1 tylko ZERO?
+ilosc_paczek = 0 # Co zrobić, kiedy nie wysłałem żadnego ELEMENTU, żeby nie wyświetliło 1 tylko ZERO?
 maksymalna_waga_paczki = 20
 aktualna_waga_paczki = 0
 najlzejsza_paczka = 0
@@ -268,7 +269,6 @@ waga_najlzejszej_paczki = maksymalna_waga_paczki # Wagę tej paczki trzeba poró
 ilosc_elementow = int(input('Ile elementów chcesz wysłać? '))
 
 if ilosc_elementow > 0:
-    ilosc_paczek = 1
     for numer_elementu in range(ilosc_elementow):
         waga_elementu = float(input('Podaj wagę elementu: '))
         if waga_elementu > 10 or waga_elementu < 1:
@@ -279,12 +279,13 @@ if ilosc_elementow > 0:
             aktualna_waga_paczki += waga_elementu
         else: # Tu kończy się ładowanie aktualnej PACZKI
             if aktualna_waga_paczki < waga_najlzejszej_paczki:
+                ilosc_paczek = 1
                 najlzejsza_paczka = ilosc_paczek
                 waga_najlzejszej_paczki = aktualna_waga_paczki
             aktualna_waga_paczki = waga_elementu
             ilosc_paczek += 1
     if aktualna_waga_paczki > 0: # Sprawdzamy, czy coś włożyłem do ostatniej PACZKI
-        if aktualna_waga_paczki < waga_najlzejszej_paczki: # Dzięki temu ostatnia PACZKA sostanie wzięta pod uwagę (wcześniej nei mogła, bo nie była pod "else")
+        if aktualna_waga_paczki < waga_najlzejszej_paczki: # Dzięki temu ostatnia PACZKA sostanie wzięta pod uwagę (wcześniej nie mogła, bo nie była pod "else")
             najlzejsza_paczka = ilosc_paczek
             waga_najlzejszej_paczki = aktualna_waga_paczki
 
