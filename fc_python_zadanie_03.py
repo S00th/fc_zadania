@@ -1,6 +1,7 @@
 # FC – PYTHON – ZADANIE 3 – Kółko i krzyżyk (zadanie dodatkowe)
 #
-# Napisz program do gry w kółko i krzyżyk z przeciwnikiem komputerowym. Główne założenia:
+# Napisz program do gry w kółko i krzyżyk z przeciwnikiem komputerowym.
+# Główne założenia:
 # 1. Gracz komputerowy rozpoczyna grę.
 # 2. Gracz komputerowy jest reprezentowany przez krzyżyk.
 # 3. Użytkownik programu jest reprezentowany przez kółko.
@@ -20,3 +21,7 @@
 # 3. Program pobiera od użytkownika identyfikator pola, które ma być wypełnione kółkiem i oczekuje naciśnięcia <Enter>.
 # 4. Jeśli identyfikator pola jest nieprawidłowy (zły identyfikator lub pole jest już zajęte), program wyświetla napis "Błąd", i wraca do punktu 4.
 # 5. Program wraca do punktu 1.
+
+
+
+# Nauczyć się gey w kółko i krzyżyk.

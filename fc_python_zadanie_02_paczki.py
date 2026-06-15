@@ -71,7 +71,7 @@ for numer_elementu in range(ilosc_elementow): # Zapis range(ilosc_paczek) jest t
         print(f'\nWpisałeś {waga_elementu} kg. Każdy z elementów musi ważyć od 1 do 10 kg.') # Dodałem akapit (\n) dla zwiększenia czytelności komunikatu.
         break
     waga_wszystkich_elementow += waga_elementu
-    if waga_elementu + aktualna_waga_paczki <= maksymalna_waga_paczki: # Jeżeli w PACZCE jets jeszcze miejsce
+    if waga_elementu + aktualna_waga_paczki <= maksymalna_waga_paczki: # Jeżeli w PACZCE jest jeszcze miejsce
         aktualna_waga_paczki += waga_elementu # to dodaję kolejny ELEMENT
     else: # Tu kończy się ładowanie aktualnej PACZKI
         if aktualna_waga_paczki <= waga_najlzejszej_paczki: # Sprawdzam, czy obecna PACZKA była najlżejsza
